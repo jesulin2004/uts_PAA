@@ -57,7 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               // Profil 2
               ProfileCard(
                 name: 'Astrid',
-                role: 'Mobile Developer',
+                role: 'Senior Flutter Developer',
                 description:
                     'I have a experience in mobile app development using Flutter. My focus is on building scalable and efficient mobile apps. With a deep understanding of backend development, I ensure seamless integration between the frontend and backend. I also enjoy challenges in optimizing app performance.',
                 imagePath: 'assets/astrid.jpg',
@@ -72,7 +72,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               // Profil 3
               ProfileCard(
                 name: 'Vivi Safira Rizki',
-                role: 'Mobile Developer',
+                role: 'Senior Flutter Developer',
                 description:
                     'As a mobile developer, I am very enthusiastic to continue learning and developing in the field of mobile application development. I am currently focused on improving my skills in Flutter and SQL databases to build efficient and easy to use applications. I believe that my experience as a junior developer will provide me with many opportunities to grow further.',
                 imagePath: 'assets/vivi.jpg',
