@@ -34,55 +34,73 @@ class _ProfileScreenState extends State<ProfileScreen> {
           )
         ],
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              // Profil 1
-              ProfileCard(
-                name: 'Jesulin Noni Novelis Wattilete',
-                role: 'Mobile Application Engineer',
-                description:
-                    'As a Flutter Developer, I enjoy learning new things and facing challenges in mobile app development. My expertise in Flutter allows me to build responsive and effective apps, while my design skills help create visually appealing user interfaces. Additionally, I have experience with Laravel to develop scalable backend solutions.',
-                imagePath: 'assets/jeje.jpg',
-                skills: [
-                  Skill(icon: FontAwesomeIcons.paintbrush, skillName: 'Design'),
-                  Skill(icon: FontAwesomeIcons.code, skillName: 'Flutter'),
-                  Skill(icon: FontAwesomeIcons.laravel, skillName: 'Laravel'),
-                ],
-              ),
-              const SizedBox(height: 20),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/latarr.jpg'), // Path gambar Anda
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.5),
+              BlendMode.darken,
+            ),
+          ),
+        ),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                // Profil 1
+                ProfileCard(
+                  name: 'Jesulin Noni Novelis Wattilete',
+                  role: 'Mobile Application Engineer',
+                  description:
+                      'As a Flutter Developer, I enjoy learning new things and facing challenges in mobile app development. My expertise in Flutter allows me to build responsive and effective apps, while my design skills help create visually appealing user interfaces. Additionally, I have experience with Laravel to develop scalable backend solutions.',
+                  imagePath: 'assets/jeje.jpg',
+                  skills: [
+                    Skill(
+                        icon: FontAwesomeIcons.paintbrush, skillName: 'Design'),
+                    Skill(icon: FontAwesomeIcons.code, skillName: 'Flutter'),
+                    Skill(icon: FontAwesomeIcons.laravel, skillName: 'Laravel'),
+                  ],
+                ),
+                const SizedBox(height: 20),
 
-              // Profil 2
-              ProfileCard(
-                name: 'Astrid',
-                role: 'Senior Flutter Developer',
-                description:
-                    'I have a experience in mobile app development using Flutter. My focus is on building scalable and efficient mobile apps. With a deep understanding of backend development, I ensure seamless integration between the frontend and backend. I also enjoy challenges in optimizing app performance.',
-                imagePath: 'assets/astrid.jpg',
-                skills: [
-                  Skill(icon: FontAwesomeIcons.paintbrush, skillName: 'Design'),
-                  Skill(icon: FontAwesomeIcons.code, skillName: 'Flutter'),
-                  Skill(icon: FontAwesomeIcons.briefcase, skillName: 'Backend'),
-                ],
-              ),
-              const SizedBox(height: 20),
+                // Profil 2
+                ProfileCard(
+                  name: 'Astrid',
+                  role: 'Senior Flutter Developer',
+                  description:
+                      'I have a experience in mobile app development using Flutter. My focus is on building scalable and efficient mobile apps. With a deep understanding of backend development, I ensure seamless integration between the frontend and backend. I also enjoy challenges in optimizing app performance.',
+                  imagePath: 'assets/astrid.jpg',
+                  skills: [
+                    Skill(
+                        icon: FontAwesomeIcons.paintbrush, skillName: 'Design'),
+                    Skill(icon: FontAwesomeIcons.code, skillName: 'Flutter'),
+                    Skill(
+                        icon: FontAwesomeIcons.briefcase, skillName: 'Backend'),
+                  ],
+                ),
+                const SizedBox(height: 20),
 
-              // Profil 3
-              ProfileCard(
-                name: 'Vivi Safira Rizki',
-                role: 'Senior Flutter Developer',
-                description:
-                    'As a mobile developer, I am very enthusiastic to continue learning and developing in the field of mobile application development. I am currently focused on improving my skills in Flutter and SQL databases to build efficient and easy to use applications. I believe that my experience as a junior developer will provide me with many opportunities to grow further.',
-                imagePath: 'assets/vivi.jpg',
-                skills: [
-                  Skill(icon: FontAwesomeIcons.paintbrush, skillName: 'Design'),
-                  Skill(icon: FontAwesomeIcons.code, skillName: 'Flutter'),
-                  Skill(icon: FontAwesomeIcons.database, skillName: 'SQL'),
-                ],
-              ),
-            ],
+                // Profil 3
+                ProfileCard(
+                  name: 'Vivi Safira Rizki',
+                  role: 'Senior Flutter Developer',
+                  description:
+                      'As a mobile developer, I am very enthusiastic to continue learning and developing in the field of mobile application development. I am currently focused on improving my skills in Flutter and SQL databases to build efficient and easy to use applications. I believe that my experience as a junior developer will provide me with many opportunities to grow further.',
+                  imagePath: 'assets/vivi.jpg',
+                  skills: [
+                    Skill(
+                        icon: FontAwesomeIcons.paintbrush, skillName: 'Design'),
+                    Skill(icon: FontAwesomeIcons.code, skillName: 'Flutter'),
+                    Skill(icon: FontAwesomeIcons.database, skillName: 'SQL'),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -126,6 +144,7 @@ class ProfileCard extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
               const SizedBox(height: 8),
@@ -142,6 +161,7 @@ class ProfileCard extends StatelessWidget {
                 description,
                 style: const TextStyle(
                   fontSize: 15,
+                  color: Colors.grey,
                 ),
                 textAlign: TextAlign.left,
               ),
@@ -189,7 +209,7 @@ class _AnimatedLogoState extends State<AnimatedLogo> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(isZoomed ? 20 : 75),
           border: Border.all(
-            color: Color.fromARGB(255, 48, 56, 113),
+            color: const Color.fromARGB(255, 48, 56, 113),
             width: 2,
           ),
         ),
@@ -227,7 +247,11 @@ class SkillCard extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           skill.skillName,
-          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+            color: Color.fromARGB(255, 255, 255, 255),
+          ),
         ),
       ],
     );

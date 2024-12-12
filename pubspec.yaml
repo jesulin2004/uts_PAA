@@ -69,6 +69,15 @@ flutter:
     - assets/astrid.jpg
     - assets/vivi.jpg
     - assets/flutter.png
+    - assets/ramen.jpeg
+    - assets/eskrim.jpeg
+    - assets/cake.jpeg
+    - assets/pizza.jpeg
+    - assets/burger.jpeg
+    - assets/sushi.jpeg
+    - assets/steak.jpeg
+    - assets/latarr.jpg
+    - assets/bg.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tugas1_kelompok/fitur.dart';
 import 'package:tugas1_kelompok/profile.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -90,6 +91,16 @@ class MyApp extends StatelessWidget {
                   },
                 ),
                 ListTile(
+                  leading: const Icon(Icons.book),
+                  title: const Text('Resep Masakan'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const FiturScreen()));
+                  },
+                ),
+                ListTile(
                   leading: const Icon(FontAwesomeIcons.whatsapp),
                   title: const Text('WhatsApp'),
                   onTap: () async {
@@ -149,140 +160,150 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-          body: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Center(
-                  child: Column(
+          body: Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/latarr.jpg'), // Path gambar Anda
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.5), BlendMode.darken),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: Column(
+                      children: [
+                        const Text(
+                          'Project Flutter',
+                          style: TextStyle(
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue,
+                          ),
+                        ),
+                        const SizedBox(height: 5),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 5, horizontal: 10),
+                          child: const Text(
+                            'Android application development',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Container(
+                    padding: const EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[100],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Text(
+                      "Flutter is an open-source framework used to create multiplatform applications, such as Android, iOS, web, Windows, MacOS, Linux, and Fuchsia.",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      const Text(
-                        'Project Flutter',
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue,
+                      Container(
+                        padding: const EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                          color: Colors.blue[50],
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          children: const [
+                            Icon(
+                              Icons.book,
+                              color: Colors.blue,
+                              size: 30,
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              'Semester',
+                              style: TextStyle(fontSize: 14),
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              '5',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      const SizedBox(height: 5),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 5, horizontal: 10),
-                        child: const Text(
-                          'Android application development',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 9, 9, 9),
-                            backgroundColor: Color.fromARGB(255, 255, 255, 255),
-                          ),
+                      Container(
+                        padding: const EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                          color: Colors.purple[50],
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          children: const [
+                            Icon(
+                              Icons.code,
+                              color: Colors.purple,
+                              size: 30,
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              'Class',
+                              style: TextStyle(fontSize: 14),
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              'TI KM',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
                   ),
-                ),
-                const SizedBox(height: 20),
-                Container(
-                  padding: const EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                    color: Colors.grey[100],
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Text(
-                    "Flutter is an open-source framework used to create multiplatform applications, such as Android, iOS, web, Windows, MacOS, Linux, and Fuchsia.",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 14),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    // Experience Box
-                    Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                        color: Colors.blue[50],
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Column(
-                        children: const [
-                          Icon(
-                            Icons.book,
-                            color: Colors.blue,
-                            size: 30,
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            'Semester',
-                            style: TextStyle(fontSize: 14),
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            '5',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
+                  const SizedBox(height: 30),
+                  const Text(
+                    'Aplications and Tools',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.purple,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                        color: Colors.purple[50],
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Column(
-                        children: const [
-                          Icon(
-                            Icons.code,
-                            color: Colors.purple,
-                            size: 30,
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            'Class',
-                            style: TextStyle(fontSize: 14),
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            'TI KM',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 30),
-                const Text(
-                  'Aplications and Tools',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.purple,
                   ),
-                ),
-                const SizedBox(height: 10),
-                Wrap(
-                  spacing: 10,
-                  runSpacing: 10,
-                  children: const [
-                    SkillChip(skill: 'Flutter'),
-                    SkillChip(skill: 'Dart'),
-                    SkillChip(skill: 'Visual Studio Code'),
-                    SkillChip(skill: 'Android Studio'),
-                    SkillChip(skill: 'Git'),
-                    SkillChip(skill: 'LDPlayer'),
-                  ],
-                ),
-              ],
+                  const SizedBox(height: 10),
+                  Wrap(
+                    spacing: 10,
+                    runSpacing: 10,
+                    children: const [
+                      SkillChip(skill: 'Flutter'),
+                      SkillChip(skill: 'Dart'),
+                      SkillChip(skill: 'Visual Studio Code'),
+                      SkillChip(skill: 'Android Studio'),
+                      SkillChip(skill: 'Git'),
+                      SkillChip(skill: 'LDPlayer'),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         );
